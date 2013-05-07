@@ -1,24 +1,7 @@
 {% extends "base.html" %}
 {% block body %}
-    <h2>Welcome!</h2>
-    {% if 'username' in session %}
-        <p>Welcome back {{session['username']}}!</p>
-        <form action="{{url_for('index')}}" method="post">
-            <input type="submit" name="logout" value="logout" />
-        </form>
-    {% else %}
-        <p>A login is required:</p>
-        <form action="{{url_for('index')}}" method="post">
-            <p>Username:<br />
-            <input type="text" name="username" /></p>
-            <p>Password:<br />
-            <input type="password" name="passwd" /></p>
-            <input type="submit" name="submit" /></p>
-        </form>
-    {% endif %}
-    {% with messages = get_flashed_messages() %}
-        {% for message in messages %}
-            {{message}}
-        {% endfor %}
-    {% endwith %}
+    <h1>Welcome!</h1>
+    <p>This is Jake's web page. It's the greatest webpage there is.</p>
+    <p>Just try clicking on things to the left, you have to log in though.
+    Do you think you have access? I doubt you can guess my password</p>
 {% endblock %}
